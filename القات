@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عرض شرائح - القات</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans:wght@400&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #000; overflow: hidden; }
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .slide.active { opacity: 1; z-index: 10; }
+    .neon-text {
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff,
+                   0 0 20px #00ffff, 0 0 35px #00ffff, 0 0 40px #00ffff;
+      animation: flicker 2s infinite alternate;
+    }
+    .neon-pink {
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff,
+                   0 0 20px #ff00ff, 0 0 35px #ff00ff, 0 0 40px #ff00ff;
+    }
+    .neon-yellow {
+      text-shadow: 0 0 5px #ffff00, 0 0 10px #ffff00, 0 0 15px #ffff00,
+                   0 0 20px #ffff00, 0 0 35px #ffff00, 0 0 40px #ffff00;
+    }
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 35px #00ffff, 0 0 40px #00ffff; }
+      20%, 24%, 55% { text-shadow: none; }
+    }
+    .title-font { font-family: 'Bubblegum Sans', cursive; }
+    .content-font { font-family: 'Sedgwick Ave', cursive; }
+    .page-number {
+      position: absolute;
+      bottom: 20px; right: 20px;
+      width: 40px; height: 40px;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: bold; font-size: 18px;
+      color: #000;
+    }
+    .nav-btn {
+      position: absolute; top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      font-size: 24px;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 20;
+      transition: 0.3s;
+    }
+    .nav-btn:hover { background: #00ffff; color: #000; }
+    .nav-btn.left { left: 20px; }
+    .nav-btn.right { right: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- الشريحة 1 -->
+  <div class="slide active bg-black">
+    <div class="text-center px-6">
+      <h1 class="title-font text-5xl md:text-7xl font-bold mb-6 neon-text text-cyan-400">الــقــات</h1>
+      <p class="content-font text-2xl md:text-4xl text-white">
+        <span class="neon-pink text-pink-400">تأثيراته الاجتماعية</span> --
+        <span class="neon-yellow text-yellow-400">الصحية</span> --
+        <span class="neon-text text-cyan-400">والاقتصادية</span>
+      </p>
+      <div class="content-font text-lg md:text-xl text-gray-300 italic mt-6">رحلة في عالم النبات المثير للجدل</div>
+    </div>
+    <div class="page-number">1</div>
+  </div>
+
+  <!-- الشريحة 2 -->
+  <div class="slide bg-gradient-to-br from-gray-900 to-black">
+    <div class="text-center px-6">
+      <h2 class="title-font text-4xl md:text-6xl text-pink-400 neon-pink mb-6">التأثير الاجتماعي</h2>
+      <p class="content-font text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        يُعتبر القات عنصراً اجتماعياً يجمع الناس في جلسات طويلة، لكنه يستهلك وقتاً ثميناً ويؤثر على الإنتاجية والعلاقات الأسرية.
+      </p>
+    </div>
+    <div class="page-number">2</div>
+  </div>
+
+  <!-- الشريحة 3 -->
+  <div class="slide bg-gradient-to-br from-black to-gray-800">
+    <div class="text-center px-6">
+      <h2 class="title-font text-4xl md:text-6xl text-yellow-400 neon-yellow mb-6">التأثير الصحي</h2>
+      <p class="content-font text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        يسبب القات مشكلات صحية مثل ارتفاع ضغط الدم، مشاكل في الجهاز الهضمي، والأرق. رغم أنه يمنح نشاطاً مؤقتاً إلا أن تأثيراته السلبية طويلة الأمد.
+      </p>
+    </div>
+    <div class="page-number">3</div>
+  </div>
+
+  <!-- الشريحة 4 -->
+  <div class="slide bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div class="text-center px-6">
+      <h2 class="title-font text-4xl md:text-6xl text-cyan-400 neon-text mb-6">التأثير الاقتصادي</h2>
+      <p class="content-font text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+        يشغل القات مساحات زراعية واسعة على حساب محاصيل غذائية، ويستنزف الاقتصاد الفردي والأسري بسبب الإنفاق الكبير عليه.
+      </p>
+    </div>
+    <div class="page-number">4</div>
+  </div>
+
+  <!-- أزرار التنقل -->
+  <button class="nav-btn left">&#8592;</button>
+  <button class="nav-btn right">&#8594;</button>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.nav-btn.left');
+    const nextBtn = document.querySelector('.nav-btn.right');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        s.classList.remove('active');
+        if (i === index) s.classList.add('active');
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+    });
+  </script>
+</body>
+</html>
